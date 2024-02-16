@@ -1,0 +1,56 @@
+{
+  "name": "python-analysis-tools",
+  "displayName": "Python Analysis Tools",
+  "description": "A suite of tools for linting, formatting, and analyzing Python code.",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "engines": {
+      "vscode": "^1.58.0"
+  },
+  "categories": [
+      "Linters",
+      "Formatters",
+      "Programming Languages"
+  ],
+  "activationEvents": [
+      "onCommand:extension.startAnalysisWorkflow",
+      "onCommand:extension.lintPythonFile",
+      "onCommand:extension.formatPythonFile",
+      "onCommand:extension.analyzeCodeQuality",
+      "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+      "commands": [
+          {
+              "command": "extension.startAnalysisWorkflow",
+              "title": "Start Full Python Analysis Workflow"
+          },
+          {
+              "command": "extension.lintPythonFile",
+              "title": "Lint Python File"
+          },
+          {
+              "command": "extension.formatPythonFile",
+              "title": "Format Python File"
+          },
+          {
+              "command": "extension.analyzeCodeQuality",
+              "title": "Analyze Python Code Quality"
+          }
+      ]
+  },
+  "scripts": {
+      "vscode:prepublish": "tsc -p ./",
+      "compile": "tsc -watch -p ./",
+      "lint": "eslint . --ext .ts"
+  },
+  "devDependencies": {
+      "typescript": "^4.0.2",
+      "vscode": "^1.1.37",
+      "eslint": "^7.7.0",
+      "@types/node": "^12.11.7",
+      "@types/vscode": "^1.58.0"
+  },
+  "dependencies": {}
+}
